@@ -203,10 +203,12 @@ const EmployeeDashboard = () => {
                 })}
               </ul>
             ) : (
+              <center>
               <div className="employee-dashboard__no-tasks">
                 <p>No tasks available</p>
                 <p>Overview of tasks, progress, and upcoming deadlines.</p>
               </div>
+              </center>
             )}
           </div>
         )}
@@ -356,10 +358,10 @@ button:disabled {
 /* No tasks fallback */
 .employee-dashboard__no-tasks {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #aaaaaa;
   padding: 20px;
-  margin-top: 40px;
+  margin-left: 230px;
   font-style: italic;
 }
 
@@ -466,6 +468,10 @@ button:disabled {
     min-width: 100%;
     max-width: 100%;
   }
+  .employee-dashboard__no-tasks{
+    margin-left: 0;
+  } 
+
 
   .employee-dashboard__task-name,
   .employee-dashboard__task-details,
