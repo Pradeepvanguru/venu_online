@@ -33,13 +33,13 @@ connectDB();
 // Middleware setup
 app.use(express.json());  // Parse JSON bodies
 app.use(cors({
-  origin: 'http://localhost:3000',  // Allow requests from your frontend
+  origin: ['http://localhost:3000', 'https://venu-online.vercel.app'],  // Allow requests from your frontend
   methods: ['GET', 'POST', 'DELETE','UPDATE','PUT'],  // Allow GET, POST, DELETE methods
   credentials: true  // Allow credentials (cookies, authorization headers, etc.)
 }));
 
 const server = http.createServer(app);
-const io = new Server(server, { cors: {  origin: "http://localhost:3000", // Adjust for frontend
+const io = new Server(server, { cors: {  origin: ['http://localhost:3000', 'https://venu-online.vercel.app'], // Adjust for frontend
   methods: ["GET", "POST",'DELETE','UPDATE'], } });
 
 // Route setup
