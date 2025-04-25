@@ -1,0 +1,344 @@
+/* Team Lead Interface container */
+.team-lead-interface {
+    display: flex;
+    background: linear-gradient(135deg, #1a1f25 0%, #242931 100%);
+    padding: 2px;
+    color: #e0e0e0;
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    font-size: 1rem;
+    min-height: 100vh;
+}
+
+/* Content wrapper for tasks */
+.content-wrapper {
+    margin-left: 280px;
+    padding: 20px;
+    width: calc(100% - 280px);
+    background: rgba(42, 46, 53, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+    font-size: 1rem;
+}
+
+.content-wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+/* Refresh Button */
+.refresh-btn {
+    float: right;
+    background: linear-gradient(45deg, #2196f3, #3f51b5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin-top: 47px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.refresh-btn:disabled{
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.refresh-btn:hover:not(:disabled){
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+.refresh-btn:hover:not(:disabled) .refresh-icon:not(.spinning) {
+    transform: rotate(180deg);
+}
+
+.refresh-btn.loading .refresh-icon {
+    animation: spin 1s linear infinite;
+}
+
+.refresh-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+
+.spinner {
+    display: inline-flex;
+    align-items: center;
+}
+
+.spinning {
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Module heading */
+.module-heading {
+    color: #eaeaea;
+    border-bottom: 3px solid #ff6347;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Task List Container */
+.todo-list {
+    padding: 20px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* Individual task item styling */
+.task-item {
+    background-color: #3a3e45;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    height: 270px;
+    font-size: 0.8rem;
+    box-shadow: 0 3px 6px rgba(233, 250, 2, 0.25);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.task-item:hover {
+    background-color: #4c2f52;
+    transform: scale(1.02);
+}
+
+.task-card {
+    font-size: 1rem;
+    margin: 5px 0;
+    padding: 10px !important;
+    border-radius: 10px;
+    background: #f9f9f9;
+    animation: slideIn 0.3s ease-out;
+    transition: background 0.3s ease;
+}
+
+.task-card:hover {
+    background: #e9f7ef;
+}
+
+/* Task progress bar */
+.task-progress {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.task-progress p {
+    font-size: 0.8rem;
+}
+
+/* Task details area */
+.task-details {
+    flex: 1;
+    padding-bottom: 20px;
+}
+
+.task-name {
+    color: #060607f1;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 0.8rem;
+}
+
+.task-module-id {
+    color: #f2f0ee;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.task-dates {
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.dots-icon,
+.toggle-arrow {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Button container */
+.task-card .delete {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+/* Buttons */
+.task-card .p-2.m-2 button {
+    padding: 8px 16px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-card .p-2.m-2 button:nth-child(1) {
+    background-color: #e74c3c;
+}
+.task-card .p-2.m-2 button:nth-child(1):hover {
+    background-color: #c0392b;
+}
+
+.task-card .p-2.m-2 button:nth-child(2) {
+    background-color: #3498db;
+}
+.task-card .p-2.m-2 button:nth-child(2):hover {
+    background-color: #2980b9;
+}
+
+/* No tasks message */
+.no-tasks {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #aaaaaa;
+    padding: 20px;
+    margin-top: 40px;
+    font-style: italic;
+}
+
+/* Progress bar */
+.progress {
+    height: 10px !important;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.progress-bar {
+    background: linear-gradient(45deg, #2196f3, #3f51b5);
+    border-radius: 5px;
+    transition: width 0.6s ease;
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(3px);
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #2196f3;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Disable interactions during loading */
+.team-lead-interface.loading {
+    pointer-events: none;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    position: absolute;
+    top: 19px;
+    left: 15px;
+    z-index: 1250;
+}
+
+
+@media screen and (max-width: 768px){
+    .sidebar-toggle {
+      display: flex;
+    }
+
+    .sidebar {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 200px;
+      background-color: #2a2a2a;
+      height: 100vh;
+      transition: transform 0.3s ease;
+      transform: translateX(-100%);
+      z-index: 1200;
+    }
+
+    .visible {
+      transform: translateX(0);
+      z-index:1200;
+      width: 150px;
+      display: block;
+      
+    }
+
+    .hidden {
+      transform: translateX(-100%);
+      display: none;
+     
+    }
+
+    .content-wrapper {
+      margin: 0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .team-lead-interface {
+      flex-direction: column;
+      font-size: 0.6rem;
+    }
+
+    .task-card,
+    .task-dates,
+    .task-info,
+    .refresh-btn,
+    .task-name,
+    .task-module-id {
+      font-size: 0.6rem !important;
+    }
+    .module-heading{
+        font-size: 1.5rem;
+    }
+  }

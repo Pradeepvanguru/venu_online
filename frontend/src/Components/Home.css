@@ -1,0 +1,159 @@
+:root {
+    --primary-color: #1abc9c;
+    --hover-color: #16a085;
+    --bg-color: #f9f9f9;
+    --text-dark: #333;
+    --text-light: #666;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-secondary: 'Merriweather', serif;
+  }
+  
+  /* Base Styles */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-color);
+    box-sizing: border-box;
+    position: relative;
+    overflow-y: scroll;
+    height: 100vh;
+   
+  }
+.home-container::-webkit-scrollbar {
+  display: none;
+}
+  
+  .home-header {
+    text-align: center;
+    margin-top: 50px;
+    padding: 0 15px;
+  }
+  
+  .home-header h1 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    font-family: var(--font-main);
+    margin-bottom: 10px;
+  }
+  
+  .home-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    font-family: var(--font-secondary);
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .home-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 60px;
+  }
+  
+  .home-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .home-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-4px);
+  }
+  
+  /* Features Section */
+  .home-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    margin: 0 auto 20px;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .info-block {
+    background-color: #fff;
+    padding: 25px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  .info-block:hover {
+    transform: translateY(-5px);
+  }
+  
+  .info-block h3 {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-family: var(--font-main);
+  }
+  
+  .info-block p {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-family: var(--font-secondary);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .home-header h1 {
+      font-size: 2rem;
+    }
+  
+    .home-header p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .home-header {
+      margin-top: 30px;
+    }
+  
+    .home-header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .home-header p {
+      font-size: 1rem;
+    }
+  
+    .home-btn {
+      font-size: 0.9rem;
+      padding: 10px 20px;
+    }
+  
+    .info-block h3 {
+      font-size: 1rem;
+    }
+  
+    .info-block p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .home-header h1 {
+      font-size: 1rem;
+    }
+    .home-header p {
+        font-size: 0.6rem;
+      }
+  
+    .home-btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
